@@ -49,6 +49,7 @@
 
    ```php
    use alan\swoft_cache_proxy\Annotation\Mapping\Cache;
+   use  alan\swoft_cache_proxy\Helper\CacheRspHelper;
    
    /**
     * @Cache(isQuery=true)
@@ -69,9 +70,10 @@
        $data = []; //业务操作返回
        return CacheRspHelper::makeRsp($data, $cacheFlagValue);
    }
-   ```
-
+```
+   
    - 引入Cache注释，注意要引入命令空间
    - Cache注释有个isQuery的属性，如果当前的操作是查询则设置为true,如果当前是更新操作则为false.比如前当我们是从数据库里面查出某个用户的订单，这里会把查询结果缓存起来，如果是更新某个用户订单则会把之前查询的缓存清空。
    - 如果isQuery=ture时，返回数据时需要使用CacheRspHelper::makeRsp函数返回。第一个参数为业务层返回的数据（即需要缓存的数据）、第二个参数为缓存数据的归属者标识字段，如何上面我们查询的是某用户(uid=10000)的订单列表数据，那这里应该传入该用户的uid(即10000).
+   - 上层(比如控制器)获取数据时需要调用CacheRspHelper::getRsp函数
 
