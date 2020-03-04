@@ -1,0 +1,31 @@
+{
+    "name": "alan/swoft-cache-proxy",
+    "description": "swoft framework cache aop proxy",
+    "type": "library",
+    "version": "v1.0.0",
+    "authors": [
+        {
+            "name": "alan",
+            "email": "alan.wang@wetax.com.cn"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "swoft/framework": "~2.0.0",
+        "swoft/stdlib": "~2.0.0",
+        "swoft/redis": "~2.0.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {"alan\\swoft_cache_proxy\\": "src/"}
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    ]
+}
