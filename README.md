@@ -65,8 +65,9 @@
     * @return array
     */
    public function testUpdate() {
-       $cacheFlagValue = 123;
-       return CacheRspHelper::makeRsp(['now' => time()], $cacheFlagValue);
+       //... 业务上的更新操作
+       $data = []; //业务操作返回
+       return CacheRspHelper::makeRsp($data, $cacheFlagValue);
    }
    ```
 
